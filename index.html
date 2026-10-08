@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kim Sokun | Full-Stack & AI Systems Developer</title>
-  <meta name="description" content="Portfolio of Kim Sokun — Full-Stack Developer & AI Systems Builder specializing in Python, React, TypeScript, Automation, and High-Performance Applications.">
+  <meta name="description" content="Portfolio of Kim Sokun - Full-Stack Developer & AI Systems Builder specializing in Python, React, TypeScript, Automation, High-Performance Systems, and Blender 3D.">
   <link rel="icon" type="image/png" href="avatar.png">
   
   <!-- Tailwind CSS CDN -->
@@ -13,7 +13,7 @@
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <script>
     tailwind.config = {
@@ -26,25 +26,22 @@
           },
           colors: {
             brand: {
-              cyan: '#06b6d4',
-              teal: '#14b8a6',
-              indigo: '#6366f1',
-              violet: '#8b5cf6',
-              dark: '#030712',
-              card: '#0f172a',
+              50: '#ecfeff',
+              100: '#cffafe',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              900: '#164e63',
+              950: '#083344',
             }
           },
           animation: {
-            'glow-pulse': 'glowPulse 4s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             'float': 'float 6s ease-in-out infinite',
           },
           keyframes: {
-            glowPulse: {
-              '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-              '50%': { opacity: '0.8', transform: 'scale(1.05)' },
-            },
             float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
+              '0%, 100%': { transform: 'translateY(0)' },
               '50%': { transform: 'translateY(-10px)' },
             }
           }
@@ -54,20 +51,52 @@
   </script>
 
   <style>
-    /* Custom glow effects and scrollbar */
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #030712;
-      color: #f8fafc;
+      color: #f3f4f6;
       overflow-x: hidden;
     }
-    code, pre, .font-mono {
-      font-family: 'JetBrains Mono', monospace;
+    
+    /* Background subtle grid pattern */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     }
-    ::selection {
-      background: #06b6d4;
-      color: #030712;
+    
+    /* Glowing gradient effects */
+    .glow-sphere {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
     }
+    
+    /* Modern Glassmorphic Cards */
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .glass-card:hover {
+      border-color: rgba(34, 211, 238, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.15);
+    }
+
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -75,349 +104,398 @@
       background: #030712;
     }
     ::-webkit-scrollbar-thumb {
-      background: #1e293b;
+      background: #1f2937;
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #334155;
-    }
-    .glass-panel {
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(51, 65, 85, 0.5);
-    }
-    .glass-card {
-      background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(51, 65, 85, 0.6);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .glass-card:hover {
-      border-color: rgba(6, 182, 212, 0.6);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.15);
-    }
-    .ambient-glow {
-      position: absolute;
-      border-radius: 9999px;
-      filter: blur(120px);
-      pointer-events: none;
-      z-index: 0;
+      background: #374151;
     }
   </style>
 </head>
-<body class="relative min-h-screen flex flex-col justify-between">
+<body class="bg-slate-950 text-slate-100 min-h-screen relative selection:bg-cyan-500 selection:text-black bg-grid-pattern">
 
-  <!-- Ambient Background Lighting -->
-  <div class="ambient-glow w-[500px] h-[500px] bg-cyan-600/15 top-0 left-1/4 animate-glow-pulse"></div>
-  <div class="ambient-glow w-[600px] h-[600px] bg-indigo-600/15 top-96 right-10 animate-glow-pulse" style="animation-delay: 2s;"></div>
-  <div class="ambient-glow w-[450px] h-[450px] bg-teal-500/10 bottom-40 left-10 animate-glow-pulse" style="animation-delay: 3s;"></div>
+  <!-- Ambient Glowing Backdrops -->
+  <div class="glow-sphere w-[500px] h-[500px] bg-cyan-600/15 -top-40 -left-40"></div>
+  <div class="glow-sphere w-[600px] h-[600px] bg-indigo-600/15 top-1/4 -right-40"></div>
+  <div class="glow-sphere w-[550px] h-[550px] bg-teal-600/10 bottom-1/3 left-10"></div>
+  <div class="glow-sphere w-[450px] h-[450px] bg-purple-600/15 -bottom-20 right-10"></div>
 
-  <!-- Background Grid Pattern -->
-  <div class="fixed inset-0 pointer-events-none opacity-20 z-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px]"></div>
-
-  <!-- Sticky Navbar -->
+  <!-- Sticky Blurred Navigation Header -->
   <header class="sticky top-0 z-50 w-full glass-panel border-b border-slate-800/80">
     <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
       
-      <!-- Brand Logo / Name -->
-      <a href="#" class="flex items-center gap-3 group">
+      <!-- Brand & Status -->
+      <a href="#about" class="flex items-center gap-3 group">
         <div class="relative">
           <div class="w-3.5 h-3.5 rounded-full bg-emerald-400 animate-pulse"></div>
           <div class="absolute inset-0 rounded-full bg-emerald-400 blur-sm opacity-60"></div>
         </div>
-        <div>
+        <div class="flex flex-col">
           <span class="font-extrabold text-lg tracking-wider text-white group-hover:text-cyan-400 transition">Kim Sokun</span>
-          <span class="hidden sm:inline-block ml-2 text-xs font-mono text-slate-400 px-2 py-0.5 rounded bg-slate-800/80 border border-slate-700/60">AI & Full-Stack</span>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-slate-400">Systems & AI Engineer</span>
         </div>
       </a>
 
       <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="#about" class="hover:text-cyan-400 transition">About</a>
-        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
-        <a href="#skills" class="hover:text-cyan-400 transition">Skills & Tech</a>
+        <a href="#showcase-video" class="hover:text-cyan-400 transition flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+          <span>Video Reel</span>
+        </a>
+        <a href="#solutions" class="hover:text-cyan-400 transition">Solutions</a>
+        <a href="#skills" class="hover:text-cyan-400 transition">Skills Matrix</a>
         <a href="#architecture" class="hover:text-cyan-400 transition">Architecture</a>
         <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
       </nav>
 
-      <!-- Header Action Buttons -->
+      <!-- Action Button -->
       <div class="flex items-center gap-3">
         <a href="https://github.com/KimSokun" target="_blank" rel="noopener noreferrer" 
-           class="px-4 py-2 text-sm font-semibold rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700/80 hover:border-cyan-500/50 shadow-sm transition flex items-center gap-2">
-          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+           class="px-4 py-2 text-xs font-mono font-semibold rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 hover:border-cyan-500/50 transition flex items-center gap-2 shadow-sm">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
           <span>GitHub</span>
-          <span class="text-xs text-cyan-400">↗</span>
-        </a>
-        <a href="#contact" class="hidden sm:inline-flex px-4 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/35 hover:scale-[1.02] transition">
-          Connect
+          <span class="text-cyan-400">↗</span>
         </a>
       </div>
 
     </div>
   </header>
 
-  <!-- Main Content Container -->
-  <main class="relative z-10 flex-1 max-w-6xl mx-auto w-full px-6 py-12 flex flex-col gap-24">
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto px-6 py-12 relative z-10 space-y-24">
 
-    <!-- HERO SECTION -->
+    <!-- Hero Section -->
     <section id="about" class="pt-8 pb-4 flex flex-col items-center text-center">
       
-      <!-- Avatar with Pulsing Halo -->
-      <div class="relative mb-8 group animate-float">
-        <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 via-teal-400 to-indigo-600 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-500"></div>
-        <img src="avatar.png" alt="Kim Sokun" class="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover border-4 border-slate-950 shadow-2xl">
+      <!-- Live Status Pill -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 mb-8 shadow-inner">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+        <span class="text-xs font-mono font-medium text-slate-300">Available for AI & High-Performance Engineering</span>
       </div>
 
-      <!-- Badge Pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-cyan-950/70 text-cyan-400 border border-cyan-800/60 mb-6 uppercase tracking-widest shadow-inner">
-        <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-        <span>Full-Stack Developer & Tech Explorer</span>
+      <!-- Avatar with Multi-layer Glow -->
+      <div class="relative mb-8 group">
+        <div class="absolute -inset-2 bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 rounded-full blur-xl opacity-75 group-hover:opacity-100 transition duration-700 animate-pulse-slow"></div>
+        <img src="avatar.png" alt="Kim Sokun" class="relative w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-4 border-slate-900 shadow-2xl transition duration-500 group-hover:scale-105">
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 max-w-4xl leading-tight">
-        Building Modern Software &amp; <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">AI Solutions</span>
+      <!-- Specialty Tag -->
+      <span class="px-4 py-1 rounded-full text-xs font-mono font-bold bg-cyan-950/80 text-cyan-400 border border-cyan-800/60 mb-6 uppercase tracking-widest">
+        Full-Stack Developer & AI Systems Builder
+      </span>
+
+      <!-- Primary Headline -->
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 max-w-4xl bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent">
+        Engineering Resilient Software & Intelligent AI Systems
       </h1>
 
       <!-- Subtitle Description -->
-      <p class="max-w-2xl text-slate-300 sm:text-lg leading-relaxed mb-10 font-normal">
-        Passionate about crafting high-performance applications, automation systems, and clean user experiences. Always exploring cutting-edge developer tools and modern web ecosystems.
+      <p class="max-w-2xl text-slate-300 text-base md:text-lg leading-relaxed mb-10 font-normal">
+        Specializing in universal automation pipelines, high-throughput distributed workers, local LLM integrations, modern reactive web ecosystems, and Blender 3D visualization.
       </p>
 
-      <!-- Key Focus Tags (From User Original Style) -->
-      <div class="w-full max-w-3xl mb-12">
-        <h2 class="text-xs uppercase tracking-widest font-bold text-slate-500 mb-5">Technologies &amp; Specialties</h2>
-        <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3">
-          <span class="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 font-mono text-sm hover:border-cyan-500/60 hover:text-cyan-400 transition cursor-default">Python</span>
-          <span class="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 font-mono text-sm hover:border-cyan-500/60 hover:text-cyan-400 transition cursor-default">JavaScript</span>
-          <span class="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 font-mono text-sm hover:border-cyan-500/60 hover:text-cyan-400 transition cursor-default">TypeScript</span>
-          <span class="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 font-mono text-sm hover:border-cyan-500/60 hover:text-cyan-400 transition cursor-default">React</span>
-          <span class="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 font-mono text-sm hover:border-cyan-500/60 hover:text-cyan-400 transition cursor-default">Node.js</span>
-          <span class="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 font-mono text-sm hover:border-cyan-500/60 hover:text-cyan-400 transition cursor-default">Tailwind CSS</span>
-          <span class="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 font-mono text-sm hover:border-cyan-500/60 hover:text-cyan-400 transition cursor-default">Git &amp; GitHub</span>
-          <span class="px-4 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 font-mono text-sm hover:border-cyan-500/60 hover:text-cyan-400 transition cursor-default">Blender 3D</span>
-        </div>
-      </div>
-
-      <!-- Action Buttons -->
+      <!-- CTA Buttons -->
       <div class="flex flex-wrap gap-4 justify-center items-center">
-        <a href="#projects" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 font-semibold text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.03] transition flex items-center gap-2">
-          <span>Explore Projects</span>
-          <span>↓</span>
+        <a href="#showcase-video" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 via-teal-500 to-indigo-600 font-bold text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 hover:scale-105 transition duration-300 flex items-center gap-2">
+          <span>▶ Watch Video Reel</span>
         </a>
-        <a href="https://github.com/KimSokun" target="_blank" rel="noopener noreferrer" 
-           class="px-6 py-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 font-semibold border border-slate-700/80 hover:border-cyan-500/50 transition flex items-center gap-2">
-          <span>GitHub Repositories</span>
-          <span>→</span>
+        <a href="#solutions" class="px-7 py-3.5 rounded-2xl glass-card font-semibold text-slate-200 hover:text-white hover:border-cyan-500/50 transition duration-300 flex items-center gap-2">
+          <span>Explore Solutions</span>
+          <span class="text-cyan-400">↓</span>
+        </a>
+        <a href="#contact" class="px-7 py-3.5 rounded-2xl bg-slate-900/90 border border-slate-700/80 hover:border-slate-500 text-slate-300 font-semibold transition duration-300">
+          Get in Touch
         </a>
       </div>
 
-      <!-- Quick Metrics Counter Strip -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-4xl mt-16 pt-10 border-t border-slate-800/60">
-        <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-3xl font-extrabold text-cyan-400 font-mono">1000+</div>
-          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Platforms Supported</div>
+      <!-- Metrics Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mt-16 pt-10 border-t border-slate-800/80">
+        <div class="glass-card rounded-2xl p-5 text-center">
+          <div class="text-3xl md:text-4xl font-extrabold font-mono text-cyan-400 mb-1">1,000+</div>
+          <div class="text-xs text-slate-400 font-medium">Platforms Researched & Supported</div>
         </div>
-        <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-3xl font-extrabold text-teal-400 font-mono">16+</div>
-          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">AI Intelligence Feeds</div>
+        <div class="glass-card rounded-2xl p-5 text-center">
+          <div class="text-3xl md:text-4xl font-extrabold font-mono text-indigo-400 mb-1">16+</div>
+          <div class="text-xs text-slate-400 font-medium">Curated Intelligence Feeds</div>
         </div>
-        <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-3xl font-extrabold text-indigo-400 font-mono">160+</div>
-          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Automated Tests Passed</div>
+        <div class="glass-card rounded-2xl p-5 text-center">
+          <div class="text-3xl md:text-4xl font-extrabold font-mono text-teal-400 mb-1">160+</div>
+          <div class="text-xs text-slate-400 font-medium">Automated Test Suites Passed</div>
         </div>
-        <div class="p-4 rounded-2xl bg-slate-900/40 border border-slate-800/60">
-          <div class="text-3xl font-extrabold text-emerald-400 font-mono">24/7</div>
-          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Service Reliability</div>
+        <div class="glass-card rounded-2xl p-5 text-center">
+          <div class="text-3xl md:text-4xl font-extrabold font-mono text-amber-400 mb-1">24/7</div>
+          <div class="text-xs text-slate-400 font-medium">High Availability Engine Design</div>
         </div>
       </div>
 
     </section>
 
-    <!-- FEATURED PROJECTS SHOWCASE -->
-    <section id="projects" class="pt-8">
+    <!-- Video Showcase Reel / YouTube Cover Banner (16:9 Aspect Ratio) -->
+    <section id="showcase-video" class="pt-4 scroll-mt-28">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4">
         <div>
-          <span class="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Portfolio Engineering</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Featured Systems &amp; Projects</h2>
-          <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl">
-            A selection of production systems, local AI environments, media processing engines, and web architectures engineered with clean principles.
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/70 border border-red-800/40 text-red-400 text-xs font-mono mb-2">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            FEATURED VIDEO & 3D REEL
+          </div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Showcase Video Banner</h2>
+          <p class="text-slate-400 text-sm mt-1">16:9 widescreen video banner formatted to standard YouTube dimensions for demos, 3D animations, and technical walkthroughs.</p>
+        </div>
+        
+        <div class="flex items-center gap-2">
+          <button id="toggleVideoBtn" onclick="changeVideoPrompt()" class="px-4 py-2 text-xs font-mono font-medium rounded-xl bg-slate-900 border border-slate-700 hover:border-red-500/60 text-slate-300 hover:text-white transition flex items-center gap-2">
+            <svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>Change YouTube Link</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 16:9 Video Banner Frame -->
+      <div class="relative group rounded-3xl p-1 bg-gradient-to-b from-slate-700/50 via-slate-800/30 to-slate-900/60 shadow-2xl hover:shadow-cyan-500/10 transition duration-500">
+        
+        <!-- Ambient Glowing Backlight -->
+        <div class="absolute -inset-1 bg-gradient-to-r from-red-600/20 via-cyan-600/20 to-indigo-600/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition duration-500 pointer-events-none"></div>
+
+        <!-- 16:9 Aspect Ratio Container -->
+        <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950 flex items-center justify-center border border-slate-800/80 shadow-inner">
+          
+          <!-- YouTube IFrame Embed (Responsive 16:9) -->
+          <iframe 
+            id="featuredVideoFrame"
+            class="w-full h-full object-cover" 
+            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0&rel=0&modestbranding=1" 
+            title="Kim Sokun - Featured Video Reel" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <!-- Video Metadata Strip -->
+        <div class="mt-3 px-3 py-2 flex flex-wrap justify-between items-center text-xs text-slate-400 gap-2">
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Supports YouTube video URLs, channel intros, and 3D Blender animation reels.</span>
+          </div>
+          <div class="flex items-center gap-4 font-mono text-[11px]">
+            <span class="text-slate-500">Format:</span>
+            <span class="text-red-400 font-bold">16:9 Widescreen</span>
+            <span class="text-slate-600">•</span>
+            <span class="text-slate-400">YouTube Cover Standard</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Engineering Solutions Showcase (Public Architectures) -->
+    <section id="solutions" class="pt-4 scroll-mt-28">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-cyan-400 font-mono text-xs font-bold uppercase tracking-widest">Core Disciplines & Architectures</span>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-2">Engineering Solutions</h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2 max-w-xl">
+            A comprehensive overview of production architectures, automation pipelines, local AI systems, and modern full-stack web platforms engineered with clean design principles.
           </p>
         </div>
 
         <!-- Filter Tabs -->
-        <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800 self-start md:self-auto text-xs font-medium">
-          <button onclick="filterProjects('all')" id="btn-all" class="px-3.5 py-1.5 rounded-lg bg-cyan-500 text-white font-semibold transition">All (5)</button>
-          <button onclick="filterProjects('ai')" id="btn-ai" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition">AI &amp; Automation</button>
-          <button onclick="filterProjects('web')" id="btn-web" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition">Full-Stack Web</button>
-          <button onclick="filterProjects('creative')" id="btn-creative" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition">Creative &amp; 3D</button>
+        <div class="flex flex-wrap gap-2 p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 text-xs font-semibold">
+          <button class="filter-btn active px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-bold transition shadow-sm" data-filter="all">All (5)</button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-slate-400 hover:text-white transition" data-filter="ai">AI & Automation</button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-slate-400 hover:text-white transition" data-filter="web">Full-Stack Web</button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-slate-400 hover:text-white transition" data-filter="3d">Creative & 3D</button>
         </div>
       </div>
 
-      <!-- Project Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projects-grid">
+      <!-- Solutions Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="solutions-grid">
 
-        <!-- Project 1: Godsdownload Universal Engine -->
-        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between project-item" data-category="ai">
+        <!-- Solution 1: Universal Automation & Streaming Pipelines -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between solution-item" data-category="ai">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-950/80 text-cyan-300 border border-cyan-800/60">
-                ⚡ Media Engine &amp; Bot
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-950/80 text-cyan-400 border border-cyan-800/40">
+                ⚡ Automation & Cloud Pipelines
               </span>
-              <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Production v1.1.0
+              <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Production Ready
               </span>
             </div>
             
-            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400">Godsdownload Engine</h3>
+            <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400">High-Performance Media & Streaming Automation</h3>
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Ultra-high-speed universal social media downloading engine supporting YouTube, TikTok, Threads (Video &amp; HD Photo Carousels), Instagram, Bilibili, and 1,000+ universal sites with streaming CDN pipeline and direct Telegram Bot delivery.
+              Ultra-high-speed universal media ingestion and transcoding pipelines supporting multi-tier CDNs, asynchronous task queues, resilient worker processes, FFmpeg chunk processing, and multi-platform automation bots.
             </p>
 
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Python</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Telegram Bot API</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">FastAPI</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">FFmpeg</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Multi-Tier CDN</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Python</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">FastAPI</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">FFmpeg</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Telegram API</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Multi-Tier CDN</span>
             </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-800/70 flex justify-between items-center text-xs text-slate-400">
-            <span>86 Automated Tests (100% Pass)</span>
-            <span class="font-mono text-cyan-400 font-semibold">Private Release 🔒</span>
+          <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
+            <span>High-Throughput Asynchronous Workers</span>
+            <a href="https://github.com/KimSokun" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1 group">
+              <span>Explore on GitHub</span>
+              <span class="group-hover:translate-x-1 transition-transform">↗</span>
+            </a>
           </div>
         </div>
 
-        <!-- Project 2: NewsAI Automated Khmer & Global Intelligence -->
-        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between project-item" data-category="ai">
+        <!-- Solution 2: Real-Time Intelligence & News Aggregator -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between solution-item" data-category="ai">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-indigo-950/80 text-indigo-300 border border-indigo-800/60">
-                📰 Intelligence &amp; Aggregator
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-indigo-950/80 text-indigo-400 border border-indigo-800/40">
+                📰 Intelligence & Data Scraper
               </span>
-              <span class="text-xs font-mono text-indigo-400 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-indigo-400"></span> Production v1.1.0
+              <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Production Ready
               </span>
             </div>
             
-            <h3 class="text-2xl font-bold text-white mb-2">NewsAI (News_kh)</h3>
+            <h3 class="text-2xl font-bold text-white mb-2">Real-Time Intelligence & News Aggregator</h3>
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Automated tech intelligence aggregator gathering real-time feeds from Hacker News, Techmeme, OpenAI, DeepMind, NVIDIA, and local Khmer tech feeds with AI summarization and autonomous broadcasting.
+              Automated tech intelligence aggregator gathering real-time feeds from top tech hubs (Hacker News, Techmeme, OpenAI, DeepMind, NVIDIA), powered by NLP summarization algorithms and autonomous broadcast channels.
             </p>
 
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Python</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">AI Summarization</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">RSS &amp; Web Scraper</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Cron Automation</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Khmer Language</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Python</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">AI Summarization</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">RSS & Web Scraper</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Cron Automation</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Khmer Localization</span>
             </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-800/70 flex justify-between items-center text-xs text-slate-400">
-            <span>16 Curated Global Tech Feeds</span>
-            <span class="font-mono text-indigo-400 font-semibold">Private Release 🔒</span>
+          <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
+            <span>16+ Curated Global Sources</span>
+            <a href="https://github.com/KimSokun" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-1 group">
+              <span>Explore on GitHub</span>
+              <span class="group-hover:translate-x-1 transition-transform">↗</span>
+            </a>
           </div>
         </div>
 
-        <!-- Project 3: WebUIai / K-Jocker Local AI Environment -->
-        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between project-item" data-category="ai">
+        <!-- Solution 3: Local LLM & Autonomous Agent Environments -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between solution-item" data-category="ai">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-teal-950/80 text-teal-300 border border-teal-800/60">
-                🧠 Local LLM &amp; Tools Platform
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-teal-950/80 text-teal-400 border border-teal-800/40">
+                🧠 Local LLM & Agent Systems
               </span>
-              <span class="text-xs font-mono text-teal-400 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-teal-400"></span> Production v1.0.0
+              <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Production Ready
               </span>
             </div>
             
-            <h3 class="text-2xl font-bold text-white mb-2">WebUIai (K-Jocker AI)</h3>
+            <h3 class="text-2xl font-bold text-white mb-2">Local LLM & Autonomous Agent Environment</h3>
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Local AI Operating Environment featuring pure Llama.cpp server integration, local GGUF execution, autonomous tool platform (Git, terminal, filesystem, web search), live sandbox code execution, and hybrid vector RAG.
+              Independent AI operating environment featuring pure Llama.cpp server integration, local GGUF quantization execution, autonomous tool platform (Git, terminal, filesystem, web search), and hybrid vector RAG.
             </p>
 
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">FastAPI</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Llama.cpp</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">GGUF Models</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Agentic Tools</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Vector RAG</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Llama.cpp</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">FastAPI</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">React & Vite</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Vector RAG</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Tool Calling Sandbox</span>
             </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-800/70 flex justify-between items-center text-xs text-slate-400">
-            <span>161 Automated Tests (100% Pass)</span>
-            <span class="font-mono text-teal-400 font-semibold">Private Release 🔒</span>
+          <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
+            <span>Offline Local Inference & Agents</span>
+            <a href="https://github.com/KimSokun" target="_blank" class="text-teal-400 hover:text-teal-300 font-semibold flex items-center gap-1 group">
+              <span>Explore on GitHub</span>
+              <span class="group-hover:translate-x-1 transition-transform">↗</span>
+            </a>
           </div>
         </div>
 
-        <!-- Project 4: Full-Stack Web Suite & Microservices -->
-        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between project-item" data-category="web">
+        <!-- Solution 4: Modern Full-Stack Web Suite -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between solution-item" data-category="web">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-violet-950/80 text-violet-300 border border-violet-800/60">
-                🌐 Modern Web &amp; API Suite
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-950/80 text-blue-400 border border-blue-800/40">
+                🌐 Modern Web & API Architecture
               </span>
-              <span class="text-xs font-mono text-violet-400 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-violet-400"></span> Production v1.0.0
+              <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Production Ready
               </span>
             </div>
             
-            <h3 class="text-2xl font-bold text-white mb-2">Modern Web Suite (Frontend &amp; Backend)</h3>
+            <h3 class="text-2xl font-bold text-white mb-2">Modern Full-Stack Web Application Suite</h3>
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Full-stack web application featuring React, TypeScript, and Tailwind CSS on Vite, backed by multi-service Node.js &amp; Python APIs containerized with Docker and optimized Nginx reverse proxies.
+              Full-stack web architecture featuring React, TypeScript, and Tailwind CSS on Vite, backed by multi-service Node.js & Python APIs containerized with Docker and optimized Nginx reverse proxies.
             </p>
 
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">React 18</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">TypeScript</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Vite</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Node.js</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Docker &amp; Nginx</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">React 18</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">TypeScript</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Tailwind CSS</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Node.js</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Docker & Nginx</span>
             </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-800/70 flex justify-between items-center text-xs text-slate-400">
-            <span>Modular Microservices Architecture</span>
-            <span class="font-mono text-violet-400 font-semibold">Private Release 🔒</span>
+          <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
+            <span>Sub-second Load Times</span>
+            <a href="https://github.com/KimSokun" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold flex items-center gap-1 group">
+              <span>Explore on GitHub</span>
+              <span class="group-hover:translate-x-1 transition-transform">↗</span>
+            </a>
           </div>
         </div>
 
-        <!-- Project 5: Blender 3D & Creative Engineering -->
-        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between project-item md:col-span-2" data-category="creative">
+        <!-- Solution 5: Blender 3D Modeling & Real-Time Visualization -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between solution-item md:col-span-2" data-category="3d">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-amber-950/80 text-amber-300 border border-amber-800/60">
-                🎨 Creative 3D &amp; Visualization
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-purple-950/80 text-purple-400 border border-purple-800/40">
+                🎨 3D & Creative Engineering
               </span>
-              <span class="text-xs font-mono text-amber-400 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-amber-400"></span> Blender Suite
+              <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                Creative Ready
               </span>
             </div>
             
-            <h3 class="text-2xl font-bold text-white mb-2">Blender 3D Modeling &amp; Scene Design</h3>
-            <p class="text-slate-300 text-sm leading-relaxed mb-6 max-w-3xl">
-              High-fidelity 3D modeling, asset creation, and procedural visualization pipelines powered by Blender 3D and Python scripting. Engineered for real-time web previews, rendering, and visual applications.
+            <h3 class="text-2xl font-bold text-white mb-2">Blender 3D Modeling & Real-Time Asset Pipeline</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Creation of high-detail 3D models, procedural shaders, lighting environments, and asset pipelines designed for interactive web visualization, game engines, and graphic media production.
             </p>
 
             <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Blender 3D</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Python Scripting</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Procedural Assets</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Lighting &amp; Shading</span>
-              <span class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-xs">Creative Engineering</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Blender 3D</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Procedural Materials</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Lighting & Rendering</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">Asset Optimization</span>
+              <span class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono text-xs">WebGL Integration</span>
             </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-800/70 flex justify-between items-center text-xs text-slate-400">
-            <span>Precision 3D Art &amp; Python Automation</span>
-            <span class="font-mono text-amber-400 font-semibold">Active Development 🚀</span>
+          <div class="pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs text-slate-400">
+            <span>High-Poly to Real-Time Optimization</span>
+            <a href="https://github.com/KimSokun" target="_blank" class="text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-1 group">
+              <span>Explore on GitHub</span>
+              <span class="group-hover:translate-x-1 transition-transform">↗</span>
+            </a>
           </div>
         </div>
 
@@ -425,120 +503,105 @@
 
     </section>
 
-    <!-- TECHNICAL SKILLS MATRIX -->
-    <section id="skills" class="pt-8">
+    <!-- Comprehensive Skills Matrix -->
+    <section id="skills" class="pt-4 scroll-mt-28">
       
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Capabilities</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Technical Stack &amp; Specialties</h2>
-        <p class="text-slate-400 text-sm sm:text-base mt-2">
-          Tools, languages, and frameworks used in building high-performance software, automation pipelines, and AI systems.
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-cyan-400 font-mono text-xs font-bold uppercase tracking-widest">Technical Proficiency</span>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-2">Core Technical Matrix</h2>
+        <p class="text-slate-400 text-sm md:text-base mt-2">
+          Structured toolsets and frameworks leveraged to build production-grade architectures and automated applications.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <!-- Category 1: Languages & Full-Stack Core -->
+        <!-- Column 1: Languages & Core Web -->
         <div class="glass-card rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg font-mono font-bold">
-              &lt;/&gt;
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-lg">Languages &amp; Web</h3>
-              <p class="text-xs text-slate-400">Core development stack</p>
-            </div>
+          <div class="w-10 h-10 rounded-xl bg-cyan-950/80 border border-cyan-800/60 flex items-center justify-center text-cyan-400 mb-5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
           </div>
+          <h3 class="text-lg font-bold text-white mb-4">Languages & Core</h3>
           <ul class="space-y-3 text-sm text-slate-300">
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Python</span>
-              <span class="text-xs text-cyan-400">Advanced / Async / Automation</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Python 3.10+</span>
+              <span class="text-xs font-mono text-slate-500">Expert</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">TypeScript / JavaScript</span>
-              <span class="text-xs text-cyan-400">Modern ES6+ / Typed</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>TypeScript / JavaScript</span>
+              <span class="text-xs font-mono text-slate-500">Advanced</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">React &amp; Vite</span>
-              <span class="text-xs text-cyan-400">Hooks / State / Components</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>HTML5 & Modern CSS3</span>
+              <span class="text-xs font-mono text-slate-500">Advanced</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Tailwind CSS</span>
-              <span class="text-xs text-cyan-400">Utility-First / Responsive</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>SQL & SQLite / PostgreSQL</span>
+              <span class="text-xs font-mono text-slate-500">Proficient</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Node.js</span>
-              <span class="text-xs text-cyan-400">Runtime &amp; Microservices</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Shell & PowerShell</span>
+              <span class="text-xs font-mono text-slate-500">Advanced</span>
             </li>
           </ul>
         </div>
 
-        <!-- Category 2: AI, Backend & Automation -->
+        <!-- Column 2: AI, Backend & Automation -->
         <div class="glass-card rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg font-mono font-bold">
-              ⚡
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-lg">AI &amp; Backend</h3>
-              <p class="text-xs text-slate-400">Intelligent automation &amp; APIs</p>
-            </div>
+          <div class="w-10 h-10 rounded-xl bg-indigo-950/80 border border-indigo-800/60 flex items-center justify-center text-indigo-400 mb-5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
+          <h3 class="text-lg font-bold text-white mb-4">AI & Backend Systems</h3>
           <ul class="space-y-3 text-sm text-slate-300">
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">FastAPI &amp; Uvicorn</span>
-              <span class="text-xs text-indigo-400">High-Performance REST APIs</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>FastAPI & Uvicorn</span>
+              <span class="text-xs font-mono text-slate-500">Expert</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Llama.cpp &amp; GGUF</span>
-              <span class="text-xs text-indigo-400">Local Inference &amp; Embeddings</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Llama.cpp & Local GGUF</span>
+              <span class="text-xs font-mono text-slate-500">Advanced</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Agentic Tool Calling</span>
-              <span class="text-xs text-indigo-400">Autonomous Execution</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Telegram Bots & APIs</span>
+              <span class="text-xs font-mono text-slate-500">Expert</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Telegram Bot API</span>
-              <span class="text-xs text-indigo-400">Production Bots &amp; Webhooks</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Web Scraping & Reverse APIs</span>
+              <span class="text-xs font-mono text-slate-500">Expert</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">FFmpeg &amp; yt-dlp</span>
-              <span class="text-xs text-indigo-400">Media Extraction &amp; Transcoding</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Automated Task Schedulers</span>
+              <span class="text-xs font-mono text-slate-500">Advanced</span>
             </li>
           </ul>
         </div>
 
-        <!-- Category 3: DevOps, Cloud & Creative -->
+        <!-- Column 3: Frontend, DevOps & 3D -->
         <div class="glass-card rounded-2xl p-6">
-          <div class="flex items-center gap-3 mb-5">
-            <div class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-lg font-mono font-bold">
-              🛠️
-            </div>
-            <div>
-              <h3 class="font-bold text-white text-lg">DevOps &amp; 3D</h3>
-              <p class="text-xs text-slate-400">Infrastructure &amp; visualization</p>
-            </div>
+          <div class="w-10 h-10 rounded-xl bg-purple-950/80 border border-purple-800/60 flex items-center justify-center text-purple-400 mb-5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
           </div>
+          <h3 class="text-lg font-bold text-white mb-4">Frontend, DevOps & 3D</h3>
           <ul class="space-y-3 text-sm text-slate-300">
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Git &amp; GitHub</span>
-              <span class="text-xs text-teal-400">Version Control &amp; Releases</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>React 18 / Vite / Tailwind</span>
+              <span class="text-xs font-mono text-slate-500">Advanced</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Linux (Ubuntu)</span>
-              <span class="text-xs text-teal-400">Server Administration</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Docker & Containerization</span>
+              <span class="text-xs font-mono text-slate-500">Proficient</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Supervisor &amp; Nginx</span>
-              <span class="text-xs text-teal-400">Process Management &amp; Proxies</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Linux Ubuntu & Nginx</span>
+              <span class="text-xs font-mono text-slate-500">Advanced</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Docker</span>
-              <span class="text-xs text-teal-400">Containerization</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Supervisor & Systemd</span>
+              <span class="text-xs font-mono text-slate-500">Advanced</span>
             </li>
-            <li class="flex items-center justify-between p-2 rounded-lg bg-slate-900/60 border border-slate-800/60">
-              <span class="font-mono">Blender 3D</span>
-              <span class="text-xs text-teal-400">3D Modeling &amp; Rendering</span>
+            <li class="flex items-center justify-between">
+              <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Blender 3D Modeling</span>
+              <span class="text-xs font-mono text-slate-500">Advanced</span>
             </li>
           </ul>
         </div>
@@ -547,38 +610,47 @@
 
     </section>
 
-    <!-- ARCHITECTURE & ENGINEERING PHILOSOPHY -->
-    <section id="architecture" class="pt-8">
+    <!-- Engineering Philosophy Section -->
+    <section id="architecture" class="pt-4 scroll-mt-28">
       
-      <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-slate-800/80 relative overflow-hidden">
-        <div class="ambient-glow w-72 h-72 bg-cyan-500/10 -top-20 -right-20"></div>
-
+      <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        
         <div class="max-w-3xl">
-          <span class="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Core Philosophy</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1 mb-4">
-            Engineering for Speed, Resilience &amp; Autonomy
-          </h2>
-          <p class="text-slate-300 leading-relaxed mb-6">
-            Software should not merely function—it should be resilient under stress, graceful in failures, and intuitive to interact with. Whether constructing multi-tiered social media extractors, real-time Telegram bots, or local neural model operating environments, I prioritize:
-          </p>
-
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
-            <div>
-              <div class="text-cyan-400 font-mono font-bold text-lg mb-1">01. Multi-Tier Fallbacks</div>
+          <span class="text-cyan-400 font-mono text-xs font-bold uppercase tracking-widest">Philosophy & Standards</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mt-2 mb-6">Engineering Principles</h2>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+            <div class="space-y-2">
+              <h4 class="font-bold text-white flex items-center gap-2">
+                <span class="text-cyan-400 font-mono">01.</span> Clean Code & Modularity
+              </h4>
               <p class="text-xs text-slate-400 leading-relaxed">
-                Designing resilient failover chains (Embed &rarr; Web Scraping &rarr; CDN Mirror &rarr; Engine) guaranteeing 99.9% task completion.
+                Writing maintainable, strictly typed, self-documenting code with decoupled services and extensive automated test coverage.
               </p>
             </div>
-            <div>
-              <div class="text-indigo-400 font-mono font-bold text-lg mb-1">02. Local AI Sovereignty</div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-white flex items-center gap-2">
+                <span class="text-indigo-400 font-mono">02.</span> Automation First
+              </h4>
               <p class="text-xs text-slate-400 leading-relaxed">
-                Empowering independent, private intelligence through optimized local GGUF models, low-latency APIs, and offline sandboxes.
+                Designing systems that run autonomously 24/7 with self-healing supervisors, automated failovers, and proactive health checks.
               </p>
             </div>
-            <div>
-              <div class="text-teal-400 font-mono font-bold text-lg mb-1">03. Automated Verification</div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-white flex items-center gap-2">
+                <span class="text-teal-400 font-mono">03.</span> High-Throughput & Fault Tolerance
+              </h4>
               <p class="text-xs text-slate-400 leading-relaxed">
-                Rigorous automated unit testing, self-healing diagnostic loops, and daemon supervisor monitoring across all services.
+                Asynchronous event loops, connection pooling, and multi-tier caching architectures built to withstand heavy network traffic.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h4 class="font-bold text-white flex items-center gap-2">
+                <span class="text-purple-400 font-mono">04.</span> Local-First AI & High Security
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Harnessing local GGUF models, low-latency microservices, offline sandboxes, and rock-solid privacy standards.
               </p>
             </div>
           </div>
@@ -588,43 +660,42 @@
 
     </section>
 
-    <!-- CONNECT & CONTACT SECTION -->
-    <section id="contact" class="pt-8 pb-12 text-center flex flex-col items-center">
+    <!-- Contact & Collaboration Section -->
+    <section id="contact" class="pt-4 pb-12 text-center flex flex-col items-center scroll-mt-28">
       
-      <div class="max-w-2xl mx-auto">
-        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-500 to-indigo-600 mx-auto mb-6 flex items-center justify-center text-white text-2xl shadow-xl shadow-cyan-500/20">
-          💬
-        </div>
+      <div class="w-16 h-16 rounded-2xl bg-cyan-950/80 border border-cyan-800/60 flex items-center justify-center text-cyan-400 mb-6 shadow-lg shadow-cyan-500/10">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      </div>
 
-        <span class="text-xs font-mono font-bold tracking-widest text-cyan-400 uppercase">Get In Touch</span>
-        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mt-1 mb-4">
-          Let’s Build Something Amazing
-        </h2>
-        <p class="text-slate-300 leading-relaxed mb-10 text-sm sm:text-base">
-          Always open to exploring collaboration opportunities, full-stack software development, AI automation architecture, or creative 3D engineering.
-        </p>
+      <span class="text-cyan-400 font-mono text-xs font-bold uppercase tracking-widest">Connect & Collaborate</span>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mt-2 mb-4">Let's Build Something Exceptional</h2>
+      <p class="text-slate-400 max-w-lg text-sm md:text-base mb-8">
+        Open for collaborations in AI automation, full-stack architectures, bot development, and 3D visual engineering.
+      </p>
 
-        <!-- Social Action Buttons -->
-        <div class="flex flex-wrap gap-4 justify-center items-center">
-          
-          <a href="https://github.com/KimSokun" target="_blank" rel="noopener noreferrer" 
-             class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold border border-slate-700/80 hover:border-cyan-500/50 shadow-md transition flex items-center gap-2.5">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            <span>GitHub Profile</span>
-            <span class="text-cyan-400">↗</span>
-          </a>
+      <!-- Contact Interaction Box -->
+      <div class="flex flex-wrap justify-center items-center gap-4">
+        
+        <!-- Copy Email Button -->
+        <button id="copyEmailBtn" class="px-6 py-3.5 rounded-2xl glass-card text-slate-200 hover:text-white font-mono text-sm flex items-center gap-3 hover:border-cyan-500/50 transition duration-300">
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          <span id="emailText">kimsokun.dev@gmail.com</span>
+          <span id="copyBadge" class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/40">Copy</span>
+        </button>
 
-          <button onclick="copyEmail()" id="btn-copy" 
-                  class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] transition flex items-center gap-2">
-            <span>Copy Contact Info</span>
-            <span id="copy-icon">📋</span>
-          </button>
+        <!-- Telegram Link -->
+        <a href="https://t.me/kimsokun" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl bg-slate-900 border border-slate-700 hover:border-cyan-500/50 text-slate-200 hover:text-white font-medium text-sm flex items-center gap-2 transition duration-300">
+          <svg class="w-4 h-4 fill-current text-cyan-400" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span>Telegram</span>
+          <span class="text-cyan-400">↗</span>
+        </a>
 
-        </div>
-
-        <div id="copy-toast" class="opacity-0 transition-opacity duration-300 text-xs font-mono text-emerald-400 mt-4">
-          ✨ Contact handle copied to clipboard!
-        </div>
+        <!-- GitHub Profile -->
+        <a href="https://github.com/KimSokun" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl bg-slate-900 border border-slate-700 hover:border-cyan-500/50 text-slate-200 hover:text-white font-medium text-sm flex items-center gap-2 transition duration-300">
+          <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          <span>GitHub</span>
+          <span class="text-cyan-400">↗</span>
+        </a>
 
       </div>
 
@@ -632,70 +703,132 @@
 
   </main>
 
-  <!-- Modern Footer -->
+  <!-- Footer -->
   <footer class="border-t border-slate-900 bg-slate-950/80 backdrop-blur-md relative z-10">
     <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
       <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
         <span>© 2026 Kim Sokun. All rights reserved.</span>
       </div>
-      <div class="flex items-center gap-6">
-        <a href="#about" class="hover:text-slate-300 transition">About</a>
-        <a href="#projects" class="hover:text-slate-300 transition">Projects</a>
-        <a href="#skills" class="hover:text-slate-300 transition">Skills</a>
-        <a href="https://github.com/KimSokun" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition">GitHub ↗</a>
+      <div class="flex items-center gap-6 font-mono">
+        <a href="#about" class="hover:text-slate-400 transition">Top ↑</a>
+        <a href="#showcase-video" class="hover:text-slate-400 transition">Video Reel</a>
+        <a href="#solutions" class="hover:text-slate-400 transition">Solutions</a>
+        <a href="https://github.com/KimSokun" target="_blank" class="hover:text-slate-400 transition">GitHub ↗</a>
       </div>
     </div>
   </footer>
 
-  <!-- Interactive JavaScript Scripts -->
-  <script>
-    // Project Category Filtering
-    function filterProjects(category) {
-      const items = document.querySelectorAll('.project-item');
-      const buttons = ['all', 'ai', 'web', 'creative'];
-      
-      // Update active button styles
-      buttons.forEach(btn => {
-        const el = document.getElementById(`btn-${btn}`);
-        if (el) {
-          if (btn === category) {
-            el.className = "px-3.5 py-1.5 rounded-lg bg-cyan-500 text-white font-semibold transition";
-          } else {
-            el.className = "px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition";
-          }
-        }
-      });
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="glass-panel px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-cyan-500/40 text-sm font-medium text-cyan-300">
+      <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      <span id="toastMsg">Email copied to clipboard!</span>
+    </div>
+  </div>
 
-      // Filter project cards
-      items.forEach(item => {
-        if (category === 'all' || item.getAttribute('data-category') === category) {
-          item.style.display = 'flex';
-          item.style.animation = 'fadeIn 0.4s ease forwards';
-        } else {
-          item.style.display = 'none';
+  <!-- Interactive Scripts -->
+  <script>
+    // 1. Interactive YouTube Video Changer
+    function changeVideoPrompt() {
+      const currentUrl = document.getElementById('featuredVideoFrame').src;
+      const userUrl = prompt(
+        "Enter YouTube Video URL or Video ID:\n(ឧទាហរណ៍: https://www.youtube.com/watch?v=VIDEO_ID ឬ ID)",
+        currentUrl
+      );
+      
+      if (userUrl && userUrl.trim() !== '') {
+        let videoId = userUrl.trim();
+        
+        // Extract YouTube ID if full URL was pasted
+        if (videoId.includes('youtube.com/watch?v='')) {
+          videoId = videoId.split('watch?v=')[1].split('&')[0];
+        } else if (videoId.includes('youtu.be/')) {
+          videoId = videoId.split('youtu.be/')[1].split('?')[0];
+        } else if (videoId.includes('embed/')) {
+          videoId = videoId.split('embed/')[1].split('?')[0];
         }
+        
+        const newEmbedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+        document.getElementById('featuredVideoFrame').src = newEmbedUrl;
+        
+        showToast("YouTube Video Reel updated successfully!");
+        localStorage.setItem('kimsokun_custom_video', newEmbedUrl);
+      }
+    }
+
+    // Load saved custom video if exists
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedVideo = localStorage.getItem('kimsokun_custom_video');
+      if (savedVideo) {
+        const frame = document.getElementById('featuredVideoFrame');
+        if (frame) frame.src = savedVideo;
+      }
+    });
+
+    // 2. Interactive Category Filter for Solutions
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const solutionItems = document.querySelectorAll('.solution-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-cyan-500', 'text-slate-950', 'font-bold');
+          b.classList.add('text-slate-400');
+        });
+
+        btn.classList.add('active', 'bg-cyan-500', 'text-slate-950', 'font-bold');
+        btn.classList.remove('text-slate-400');
+
+        const filter = btn.getAttribute('data-filter');
+
+        solutionItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Interactive Copy Email
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const emailText = document.getElementById('emailText');
+    const copyBadge = document.getElementById('copyBadge');
+
+    if (copyEmailBtn && emailText) {
+      copyEmailBtn.addEventListener('click', () => {
+        const textToCopy = emailText.innerText.trim();
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          copyBadge.innerText = 'COPIED!';
+          copyBadge.className = 'text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800/40';
+          showToast('Email copied to clipboard: ' + textToCopy);
+          
+          setTimeout(() => {
+            copyBadge.innerText = 'COPY';
+            copyBadge.className = 'text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/40';
+          }, 2500);
+        }).catch(err => {
+          showToast('Failed to copy. Please manually copy.');
+        });
       });
     }
 
-    // Copy Contact Info Helper
-    function copyEmail() {
-      const contactText = "https://github.com/KimSokun";
-      navigator.clipboard.writeText(contactText).then(() => {
-        const toast = document.getElementById('copy-toast');
-        const icon = document.getElementById('copy-icon');
-        if (toast) {
-          toast.classList.remove('opacity-0');
-          toast.classList.add('opacity-100');
-          if (icon) icon.innerText = '✅';
-          setTimeout(() => {
-            toast.classList.remove('opacity-100');
-            toast.classList.add('opacity-0');
-            if (icon) icon.innerText = '📋';
-          }, 3000);
-        }
-      }).catch(err => {
-        console.error('Failed to copy', err);
-      });
+    // 4. Toast Notification Trigger
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      if (!toast || !toastMsg) return;
+
+      toastMsg.innerText = message;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
     }
   </script>
 
