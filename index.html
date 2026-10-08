@@ -25,27 +25,54 @@
   </header>
 
   <!-- Hero Section -->
-  <main class="max-w-5xl mx-auto w-full px-6 py-16 flex-1 flex flex-col items-center text-center">
+  <main class="max-w-5xl mx-auto w-full px-6 pt-6 pb-16 flex-1 flex flex-col items-center text-center">
     
-    <div class="relative mb-8 group">
-      <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full blur opacity-70 group-hover:opacity-100 transition duration-500"></div>
-      <img src="avatar.png" alt="Kim Sokun" class="relative w-36 h-36 rounded-full object-cover border-4 border-slate-950 shadow-2xl">
+    <!-- YouTube Cover Style Live Video Banner -->
+    <div class="w-full relative mb-16 sm:mb-20">
+      
+      <!-- Ambient Glow Behind Banner -->
+      <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500/30 via-indigo-500/30 to-purple-500/30 rounded-3xl blur-xl opacity-75 pointer-events-none"></div>
+
+      <!-- Widescreen Video Banner Frame -->
+      <div class="relative w-full aspect-[16/8] sm:aspect-[16/6] md:aspect-[21/9] rounded-3xl overflow-hidden border border-slate-800/80 shadow-2xl bg-slate-900">
+        
+        <!-- Live Looping Video -->
+        <video autoplay loop muted playsinline class="w-full h-full object-cover">
+          <source src="banner.mp4" type="video/mp4">
+        </video>
+
+        <!-- Aesthetic Gradients for Seamless Blending -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-transparent to-transparent"></div>
+      </div>
+
+      <!-- Overlapping Avatar (YouTube Profile Header Style) -->
+      <div class="absolute -bottom-12 sm:-bottom-16 left-1/2 -translate-x-1/2 z-20 group">
+        <div class="relative">
+          <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-500 rounded-full blur-md opacity-80 group-hover:opacity-100 transition duration-500"></div>
+          <img src="avatar.png" alt="Kim Sokun" class="relative w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full object-cover border-4 border-slate-950 shadow-2xl">
+        </div>
+      </div>
+
     </div>
 
+    <!-- Specialty Badge -->
     <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-cyan-950/80 text-cyan-400 border border-cyan-800/50 mb-6 uppercase tracking-widest">
       Full-Stack Developer & Tech Explorer
     </span>
 
+    <!-- Headline -->
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
       Building Modern Software & AI Solutions
     </h1>
 
+    <!-- Description -->
     <p class="max-w-2xl text-slate-400 text-lg leading-relaxed mb-10">
       Passionate about crafting high-performance applications, automation systems, and clean user experiences. Always exploring cutting-edge developer tools and modern web ecosystems.
     </p>
 
     <!-- Tech Stack Grid -->
-    <div class="w-full max-w-3xl mt-8">
+    <div class="w-full max-w-3xl mt-4">
       <h2 class="text-xs uppercase tracking-widest font-bold text-slate-500 mb-6">Technologies & Specialties</h2>
       <div class="flex flex-wrap justify-center gap-3">
         <span class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-mono text-sm hover:border-cyan-500/50 transition">Python</span>
@@ -60,7 +87,7 @@
     </div>
 
     <!-- Quick GitHub CTA -->
-    <div class="mt-16 flex flex-wrap gap-4 justify-center">
+    <div class="mt-14 flex flex-wrap gap-4 justify-center">
       <a href="https://github.com/KimSokun" target="_blank" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 font-semibold text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] transition">
         Explore GitHub Repositories →
       </a>
