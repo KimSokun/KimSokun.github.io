@@ -1,10 +1,10 @@
 {
-  "version": "1.0.0",
-  "tag_name": "v1.0.0",
-  "name": "K2 Dynamic Island v1.0.0",
-  "published_at": "2026-10-19T00:00:00Z",
-  "release_notes": "Official release of K2 Dynamic Island featuring floating dynamic pill capsule, real-time audio activity equalizer, file drag-and-drop inspector, system tools, and anti-tamper security.",
-  "download_url": "https://kimsokun.github.io/downloads/K2DynamicIsland-Setup.exe",
-  "installer_size": 488960,
-  "sha256": ""
+  "version": "1.1.0",
+  "tag_name": "v1.1.0",
+  "name": "K2 Dynamic Island v1.1.0",
+  "published_at": "2026-10-19T01:00:00Z",
+  "release_notes": "Official release of K2 Dynamic Island v1.1.0: Seamless setup upgrading with automated process termination, real-time audio activity equalizer, music title marquee scrolling, refreshed WebView2 cache management, and performance enhancements.",
+  "download_url": "https://k2dynamicisland.github.io/downloads/K2DynamicIsland-Setup.exe",
+  "installer_size": 492032,
+  "sha256": "B72FD53E3112A0B9F94D89A02EBD59F6190F8B064C37CF4A80EDBD4F4050AF2A"
 }
