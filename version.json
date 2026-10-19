@@ -2,9 +2,9 @@
   "version": "1.1.5",
   "tag_name": "v1.1.5",
   "name": "K2 Dynamic Island v1.1.5",
-  "published_at": "2026-10-19T08:58:00Z",
-  "release_notes": "Official release of K2 Dynamic Island v1.1.5: Zero-delay Next/Prev/Play media controls, dynamic in-app version display, WinHTTP auto-update network timeouts, and permanent capsule template animation restoration.",
+  "published_at": "2026-10-19T09:20:00Z",
+  "release_notes": "Official release of K2 Dynamic Island v1.1.5: Zero-delay Next/Prev/Play media controls, ultra-fast 120ms polling, direct response status sync, decoupled playback audio peak detection, dynamic in-app version display, and permanent capsule template animation restoration.",
   "download_url": "https://k2dynamicisland.github.io/downloads/K2DynamicIsland-Setup.exe",
-  "installer_size": 1214976,
-  "sha256": "B0F18BD1134A6CE41C191F7DDD9323D24BAEBFE793E272FCCF77B58FFA74EC30"
+  "installer_size": 1215488,
+  "sha256": "0B1A8ED3A6482F4B4E97F613F0851A58089E41125E75D0B3A12561EE8D4A0DD6"
 }
