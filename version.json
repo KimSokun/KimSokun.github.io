@@ -1,10 +1,10 @@
 {
-  "version": "1.1.2",
-  "tag_name": "v1.1.2",
-  "name": "K2 Dynamic Island v1.1.2",
-  "published_at": "2026-10-19T07:20:00Z",
-  "release_notes": "Official release of K2 Dynamic Island v1.1.2: GPU acceleration smoothness upgrade, direct non-blocking window drag, Audio UI visibility fix with intuitive Play/Pause icon alignment, Auto-update HTTP 302 redirect engine fix, and Standalone setup path improvements.",
+  "version": "1.1.3",
+  "tag_name": "v1.1.3",
+  "name": "K2 Dynamic Island v1.1.3",
+  "published_at": "2026-10-19T07:45:00Z",
+  "release_notes": "Official release of K2 Dynamic Island v1.1.3: High-performance asynchronous C++ backend media controller thread, instant zero-lag status updates, direct WM_APPCOMMAND window targeting, fixed standard Play/Pause UI button icon alignment, and responsive audio UI.",
   "download_url": "https://k2dynamicisland.github.io/downloads/K2DynamicIsland-Setup.exe",
-  "installer_size": 1212928,
-  "sha256": "5F63AEF816AD0A97CDF94F37999F01F608CAE11895BA0478888EA3B7E63D2811"
+  "installer_size": 1214464,
+  "sha256": "A006E047391CF0EF5C9D17BD2588665FDC22FF121DB87D459F3FDBF519887BDA"
 }
