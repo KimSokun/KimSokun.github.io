@@ -2,9 +2,9 @@
   "version": "1.1.0",
   "tag_name": "v1.1.0",
   "name": "K2 Dynamic Island v1.1.0",
-  "published_at": "2026-10-19T01:30:00Z",
-  "release_notes": "Official release of K2 Dynamic Island v1.1.0: Seamless setup upgrading with automated process termination, real-time audio activity equalizer, music title marquee scrolling, rock-solid multithreaded UI dispatching, and memory stability fixes.",
+  "published_at": "2026-10-19T02:10:00Z",
+  "release_notes": "Official release of K2 Dynamic Island v1.1.0: Zero external runtime dependencies (100% statically linked standalone binary without libc++.dll requirement), seamless setup upgrading with automated process termination, real-time audio activity equalizer, music title marquee scrolling, and rock-solid memory stability.",
   "download_url": "https://k2dynamicisland.github.io/downloads/K2DynamicIsland-Setup.exe",
-  "installer_size": 493568,
-  "sha256": "0F0435D7CA8BDCF94BD1DA3A9BC6D757FC5C972A74AE08ED52BE7067A8D72106"
+  "installer_size": 1201664,
+  "sha256": "7276AD84D19721A4B40F36A249F41802809D14C601874AD11E02D7A52321ABEB"
 }
