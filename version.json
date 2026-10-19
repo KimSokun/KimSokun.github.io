@@ -6,5 +6,5 @@
   "release_notes": "Official release of K2 Dynamic Island v1.1.0: Seamless setup upgrading with automated process termination, real-time audio activity equalizer, music title marquee scrolling, refreshed WebView2 cache management, and performance enhancements.",
   "download_url": "https://k2dynamicisland.github.io/downloads/K2DynamicIsland-Setup.exe",
   "installer_size": 491520,
-  "sha256": "A4B668F1AF9F1011C58E9AC40777B8D5007288E647FD44A0E81A3A6532A9547E"
+  "sha256": "6BF15490D72960522E15D8219CDC196A264F17161D9A940CD54A502F1D6905AE"
 }
